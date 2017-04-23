@@ -1,5 +1,6 @@
 package blackjack;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BlackJackRules {
@@ -81,6 +82,13 @@ public class BlackJackRules {
 
 	}
 
+	public void printFirstHandValue(Card hand) {
+		List<Card> a = new ArrayList<Card>();
+		a.add(hand);
+		System.out.println("Dealer's faced up hand value is: " + CardValueHand(a)[0]);
+
+	}
+
 	public int finalCardValue(List<Card> hand) {
 		int[] currentHandValue = CardValueHand(hand);
 		if (currentHandValue[0] == 21 || currentHandValue[1] == 21) {
@@ -89,10 +97,10 @@ public class BlackJackRules {
 			return 0;
 		} else if (currentHandValue[0] == currentHandValue[1]) {
 			return currentHandValue[0];
-		} else if ((currentHandValue[0] > 21) && (currentHandValue[1] < 21)) {
-			return currentHandValue[1];
 		} else if ((currentHandValue[0] < 21) && (currentHandValue[1] > 21)) {
 			return currentHandValue[0];
+		} else if ((currentHandValue[0] > 21) && (currentHandValue[1] < 21)) {
+			return currentHandValue[1];
 		} else if ((currentHandValue[0] != currentHandValue[1])) {
 			return currentHandValue[1];
 		}

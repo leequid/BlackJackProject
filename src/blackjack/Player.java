@@ -6,7 +6,7 @@ import java.util.List;
 public class Player extends TablePlayer {
 	private List<Card> playerHand = new ArrayList<Card>();
 	private List<List<Card>> games = new ArrayList<>();
-	private int money;
+	private int money = 100;
 
 	public void hit(Card a) {
 		playerHand.add(a);
@@ -36,4 +36,22 @@ public class Player extends TablePlayer {
 		// TODO Auto-generated method stub
 
 	}
+
+	public List<List<Card>> getGames() {
+		return games;
+	}
+
+	public void setGames(List<List<Card>> games) {
+		this.games = games;
+	}
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+	
+	
 }
