@@ -20,8 +20,8 @@ public class GameOfBlackJack {
 		Bob.shuffleCard();
 
 		do {
-			if (Bob.getPlayDeck().size() < 52) {
-				System.out.println("We are short on Cards getting a new one and shuffling");
+			if (Bob.getPlayDeck().size() < 20) {
+				System.out.println("We are short on Cards getting a new cards and shuffling");
 				Bob.setPlayDeck(new ArrayList<>());
 				for (int i = 0; i < numberOfDecks; i++) {
 					Bob.getCard();
