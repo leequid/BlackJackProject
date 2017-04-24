@@ -140,6 +140,13 @@ public class BlackJackRules {
 
 	}
 
+	public boolean canYouSplit(List<Card> hand) {
+		if (hand.get(0).getRank().ordinal() == hand.get(1).getRank().ordinal()) {
+			return true;
+		}
+		return false;
+	}
+
 	public boolean DealerShouldHit(List<Card> DealerHand) {
 
 		if ((CardValueHand(DealerHand)[0] == 17) && (CardValueHand(DealerHand)[2] > 0)) {

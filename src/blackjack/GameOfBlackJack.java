@@ -11,14 +11,21 @@ public class GameOfBlackJack {
 		Player Eric = new Player();
 		BlackJackRules rules = new BlackJackRules();
 		int currentMoneyBet = 0;
-
-		Bob.getCard();
+		int numberOfDecks = 0;
+		System.out.println("How many decks do you want to play with?");
+		numberOfDecks = kb.nextInt();
+		for (int i = 0; i < numberOfDecks; i++) {
+			Bob.getCard();
+		}
 		Bob.shuffleCard();
+
 		do {
-			if (Bob.getPlayDeck().size() < 20) {
+			if (Bob.getPlayDeck().size() < 52) {
 				System.out.println("We are short on Cards getting a new one and shuffling");
 				Bob.setPlayDeck(new ArrayList<>());
-				Bob.getCard();
+				for (int i = 0; i < numberOfDecks; i++) {
+					Bob.getCard();
+				}
 				Bob.shuffleCard();
 			}
 
